@@ -1,0 +1,204 @@
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<h1>Self-Supervised Generative Network for Personalized Speech Enhancement</h1>
+<h2><strong>Authors:</strong> "Chi Yang, <a href="mailto:jjyu@bjtu.deu.cn">Jingjing Yu*</a>, Luyao Zhang, Lirui Wu"</h2>
+
+<h3><strong>Conclusion 1:</strong></h3>
+<p  class="table-name"><strong>Table 1</strong> Performance on different mask methods and baseline</p>
+
+<table class="my-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>MSE</th>
+      <th>PESQ</th>
+      <th>STOI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Before mask</td>
+      <td>0.0</td>
+      <td>4.4674</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <td>DAPC</td>
+      <td>0.2431±0.0763</td>
+      <td>1.6414±0.1596</td>
+      <td>0.8788±0.0240</td>
+    </tr>
+    <tr>
+      <td>Point mask</td>
+      <td>0.1010±0.0207</td>
+      <td>3.1373±0.3254</td>
+      <td>0.9602±0.0142</td>
+    </tr>
+    <tr>
+      <td>Frame mask</td>
+      <td>0.0839±0.0204</td>
+      <td>3.2113±0.3280</td>
+      <td>0.9667±0.0152</td>
+    </tr>
+    <tr>
+      <td>Cross mask</td>
+      <td>0.1936±0.0347</td>
+      <td>2.5815±0.3481</td>
+      <td>0.9487±0.0218</td>
+    </tr>
+    <tr>
+      <td>Progressive mask</td>
+      <td>0.0809±0.0186</td>
+      <td>3.1297±0.3261</td>
+      <td>0.9646±0.0138</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><strong>Conclusion 2:</strong></h3>
+<p class="table-name"><strong>Table 2</strong> Experiment results in multiple noisy scenes</p>
+
+<table class="my-table2">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PESQ</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>BUS</td>
+      <td>CAF</td>
+      <td>PED</td>
+      <td>STR</td>
+      <td>Avg.</td>
+    </tr>
+    <tr>
+      <td>Noisy(channel 1)</td>
+      <td>1.2228±0.1197</td>
+      <td>1.1157±0.0460</td>
+      <td>1.1227±0.0710</td>
+      <td>1.1503±0.0810</td>
+      <td>1.1552±0.0959</td>
+    </tr>
+    <tr>
+      <td>CNN</td>
+      <td>0.1010±0.0207</td>
+      <td>3.1373±0.3254</td>
+      <td>0.9602±0.0142</td>
+      <td>0.8788±0.0240</td>
+      <td>0.8788±0.0240</td>
+    </tr>
+    <tr>
+      <td>LSTM-IPD</td>
+      <td>1.9105±0.4108</td>
+      <td>1.4864±0.1613</td>
+      <td>1.5117±0.2760</td>
+      <td>1.6558±0.3446</td>
+      <td>1.6442±0.3590</td>
+    </tr>
+    <tr>
+      <td>UNet-GCN</td>
+      <td>1.6131±0.2341</td>
+      <td>1.4136±0.1255</td>
+      <td>1.4724±0.2129</td>
+      <td>1.5632±0.2407</td>
+      <td>1.5178±0.2241</td>
+    </tr>
+    <tr>
+      <td>STGCSEN</td>
+      <td>2.0381±0.2988</td>
+      <td>1.7703±0.1969</td>
+      <td>1.7272±0.3291</td>
+      <td>1.9593±0.3160</td>
+      <td>1.8764±0.3216</td>
+    </tr>
+    <tr>
+      <td>MetricGAN-U</td>
+      <td>1.2810±0.1166</td>
+      <td>1.2035±0.0614</td>
+      <td>1.2017±0.1079</td>
+      <td>1.2521±0.1214</td>
+      <td>1.2357±0.1113</td>
+    </tr>
+    <tr>
+      <td>STGCSEN-SV</td>
+      <td>1.9744±0.2388</td>
+      <td>1.8019±0.2049</td>
+      <td>1.7739±0.3148</td>
+      <td>1.9593±0.3235</td>
+      <td>1.8786±0.2913</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3><strong>Wav</strong></h3>
+<p>Noisy wav</p>
+
+<table>
+  <tr>
+    <td></td>
+    <td>BUS</td>
+    <td>CAF</td>
+    <td>PED</td>
+    <td>STR</td>
+  </tr>
+  <tr>
+    <td>
+      noisy
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\快乐崇拜.mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+  </tr>
+    <tr>
+    <td>
+      Point mask
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\快乐崇拜.mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+    <td>
+      <div class="audio-wrapper">
+        <audio controls src="wav\陪你度过漫长岁月 .mp3"></audio>
+      </div>
+    </td>
+  </tr>
+</table>
+
